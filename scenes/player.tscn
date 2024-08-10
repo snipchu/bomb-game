@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://day8occs1jor3"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_e11tb"]
+[ext_resource type="Texture2D" uid="uid://cp7abg5spq2wj" path="res://assets/player/frontidle.png" id="3_ul0la"]
+[ext_resource type="PackedScene" uid="uid://clm4u74sefnsv" path="res://scenes/pingmenu.tscn" id="4_ckiah"]
+[ext_resource type="Texture2D" uid="uid://bitmdxjq87soy" path="res://assets/player/leftwalk.png" id="6_1qrxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxj02"]
+atlas = ExtResource("3_ul0la")
+region = Rect2(0, 0, 24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hg43"]
+atlas = ExtResource("3_ul0la")
+region = Rect2(0, 15, 24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dah4a"]
+atlas = ExtResource("6_1qrxu")
+region = Rect2(0, 0, 24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0edl"]
+atlas = ExtResource("6_1qrxu")
+region = Rect2(24, 0, 24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_742fa"]
+atlas = ExtResource("6_1qrxu")
+region = Rect2(0, 15, 24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwe1a"]
+atlas = ExtResource("6_1qrxu")
+region = Rect2(24, 15, 24, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpcto"]
+animations = [{
+"frames": [{
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_mxj02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hg43")
+}],
+"loop": true,
+"name": &"frontidle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dah4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0edl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_742fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwe1a")
+}],
+"loop": true,
+"name": &"sidewalk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5y4n"]
+radius = 5.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_e11tb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cpcto")
+animation = &"frontidle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_h5y4n")
+
+[node name="pingmenu" parent="." instance=ExtResource("4_ckiah")]
+visible = false

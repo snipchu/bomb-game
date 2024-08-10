@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://clm4u74sefnsv"]
+
+[ext_resource type="Script" path="res://scripts/pingmenu.gd" id="1_j0n7u"]
+[ext_resource type="PackedScene" uid="uid://cws4ilf8jwq23" path="res://scenes/pingbutton.tscn" id="2_ra4t4"]
+
+[node name="pingmenu" type="Container"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_j0n7u")
+
+[node name="pingbutton" parent="." instance=ExtResource("2_ra4t4")]
+position = Vector2(76.0495, 72.409)
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="mouse_entered" from="pingbutton" to="." method="_on_pingbutton_mouse_entered"]
