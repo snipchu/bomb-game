@@ -1,9 +1,9 @@
 extends Area2D
 
-const PINGMENU = preload("res://scenes/pingmenu.tscn")
 
 func _on_mouse_entered():
-	scale = Vector2(.5,.5)
-	
+	scale = Vector2(scale.x+.25,scale.y+.25)
+	Pingmenu.hover = 1
+
 func _on_mouse_exited():
-	scale = Vector2(.25,.25)
+	scale = Vector2(scale.x-.25,scale.y-.25)

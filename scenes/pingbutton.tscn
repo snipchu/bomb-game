@@ -1,20 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cws4ilf8jwq23"]
+[gd_scene load_steps=3 format=3 uid="uid://gkr0lok3ugeb"]
 
-[ext_resource type="Script" path="res://scripts/pingbutton.gd" id="1_j5keo"]
-[ext_resource type="Texture2D" uid="uid://du2ledur5qp80" path="res://icon.svg" id="1_ovsi6"]
+[ext_resource type="Script" path="res://scripts/pingbutton.gd" id="1_m36ar"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v7k8"]
-size = Vector2(128, 128)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p1bt0"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/red.png-dc0444266e8941dd1b9b54fa80365122.ctex"
 
 [node name="pingbutton" type="Area2D"]
-scale = Vector2(0.25, 0.25)
-script = ExtResource("1_j5keo")
+script = ExtResource("1_m36ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ovsi6")
+texture = SubResource("CompressedTexture2D_p1bt0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1v7k8")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(83, 160, 88, 123, 97, 91, 110, 59, 127, 30, 147, 4, -17, -160, -47, -125, -77, -81, -103, -34, -117, -2, -128, 30, -139, 74, -147, 129, -148, 161)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
