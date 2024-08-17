@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bun6leh7odnjv"
-path="res://.godot/imported/rightwalk.png-f09fc598fb2be3bff79e42a47ab72a44.ctex"
+uid="uid://c4oll3f8w6pa2"
+path="res://.godot/imported/clip.png-3dca5e3ed903bcfee1972a0980d6da3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/rightwalk.png"
-dest_files=["res://.godot/imported/rightwalk.png-f09fc598fb2be3bff79e42a47ab72a44.ctex"]
+source_file="res://assets/pingmenu/clip.png"
+dest_files=["res://.godot/imported/clip.png-3dca5e3ed903bcfee1972a0980d6da3b.ctex"]
 
 [params]
 

@@ -18,7 +18,7 @@ position = Vector2(560, 455)
 texture = ExtResource("1_hcwrn")
 
 [node name="player" parent="." instance=ExtResource("1_a4nl6")]
-position = Vector2(539, 369)
+position = Vector2(549, 349)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(5, 5)

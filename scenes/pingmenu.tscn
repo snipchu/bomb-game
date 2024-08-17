@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://542pvw88gyy4"]
+[gd_scene load_steps=26 format=3 uid="uid://542pvw88gyy4"]
 
-[ext_resource type="Script" path="res://scripts/pingbutton.gd" id="1_e3o18"]
 [ext_resource type="Script" path="res://scripts/pingmenu.gd" id="1_m0ur0"]
 [ext_resource type="Texture2D" uid="uid://jx2bkg48v5k4" path="res://assets/pingmenu/orange.png" id="2_o7ww4"]
+[ext_resource type="Texture2D" uid="uid://drmdtcjybpsw1" path="res://assets/pingmenu/clip1.png" id="2_t418j"]
+[ext_resource type="PackedScene" uid="uid://gkr0lok3ugeb" path="res://scenes/pingbutton.tscn" id="3_0sq6e"]
+[ext_resource type="Texture2D" uid="uid://c4oll3f8w6pa2" path="res://assets/pingmenu/clip.png" id="3_ereue"]
+[ext_resource type="Texture2D" uid="uid://dbuqat2ajbsni" path="res://assets/pingmenu/red.png" id="3_l3d00"]
 [ext_resource type="Texture2D" uid="uid://cnxfol4nh4hc1" path="res://assets/pingmenu/yellow.png" id="3_vac60"]
 [ext_resource type="Texture2D" uid="uid://wdjeeh35p3ni" path="res://assets/pingmenu/green.png" id="4_l70wj"]
 [ext_resource type="Texture2D" uid="uid://dgo28yv16mvgc" path="res://assets/pingmenu/cyan.png" id="5_o1tpv"]
@@ -10,128 +13,193 @@
 [ext_resource type="Texture2D" uid="uid://0dt346rrt4fe" path="res://assets/pingmenu/purple.png" id="7_0ek32"]
 [ext_resource type="Texture2D" uid="uid://fw3n142a7k3f" path="res://assets/pingmenu/pink.png" id="8_hglla"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ofbkm"]
-resource_local_to_scene = true
-load_path = "res://.godot/imported/red.png-dc0444266e8941dd1b9b54fa80365122.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhev1"]
+atlas = ExtResource("2_t418j")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l4qu"]
+atlas = ExtResource("2_t418j")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3in8e"]
+atlas = ExtResource("2_t418j")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlbbe"]
+atlas = ExtResource("2_t418j")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcu3c"]
+atlas = ExtResource("2_t418j")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsby3"]
+atlas = ExtResource("2_t418j")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wat68"]
+atlas = ExtResource("3_ereue")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nnox"]
+atlas = ExtResource("3_ereue")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uma2n"]
+atlas = ExtResource("3_ereue")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pqsb"]
+atlas = ExtResource("3_ereue")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5t2k"]
+atlas = ExtResource("3_ereue")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxbg1"]
+atlas = ExtResource("3_ereue")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3hv8"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_uhev1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_6l4qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3in8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlbbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcu3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsby3")
+}],
+"loop": false,
+"name": &"close",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wat68")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_7nnox")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_uma2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pqsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5t2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxbg1")
+}],
+"loop": false,
+"name": &"open",
+"speed": 12.0
+}]
 
 [node name="pingmenu" type="Container"]
-visible = false
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 950.0
-offset_bottom = 950.0
-scale = Vector2(0.1, 0.1)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_m0ur0")
 
-[node name="pingbutton" type="Area2D" parent="."]
-position = Vector2(148, 320)
-script = ExtResource("1_e3o18")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+clip_children = 1
+position = Vector2(40, 40)
+sprite_frames = SubResource("SpriteFrames_g3hv8")
+animation = &"open"
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton"]
-texture = SubResource("CompressedTexture2D_ofbkm")
-metadata/_edit_lock_ = true
+[node name="pingbutton1" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(-28, -13.5)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton"]
-polygon = PackedVector2Array(83, 160, 88, 123, 97, 91, 110, 59, 127, 30, 147, 4, -17, -160, -47, -125, -77, -81, -103, -34, -117, -2, -128, 30, -139, 74, -147, 129, -148, 161)
-metadata/_edit_lock_ = true
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton1" index="0"]
+texture = ExtResource("3_l3d00")
 
-[node name="pingbutton2" type="Area2D" parent="."]
-position = Vector2(319.5, 147)
-script = ExtResource("1_e3o18")
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton1" index="1"]
+polygon = PackedVector2Array(-12, 12.5, 8, 12.5, 12, 0.5, -2, -13.5, -8, -5.5, -12, 6.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton2"]
+[node name="pingbutton2" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(-14.5, -28)
+
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton2" index="0"]
 texture = ExtResource("2_o7ww4")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton2"]
-polygon = PackedVector2Array(4, 148, -160, -17, -135, -39, -90, -71, -49, -94, -11, -112, 32, -127, 61, -135, 95, -142, 122, -146, 160, -148, 160, 84, 140, 85, 104, 93, 66, 107, 35, 124, 14, 139)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton2" index="1"]
+polygon = PackedVector2Array(1.90735e-06, 13, 4, 11, 9, 9, 13, 8, 13, -12, 4, -11, -4, -8, -11, -4, -14, 3.8147e-06)
 
-[node name="pingbutton3" type="Area2D" parent="."]
-position = Vector2(681.5, 147)
-script = ExtResource("1_e3o18")
+[node name="pingbutton3" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(14.5, -28)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton3"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton3" index="0"]
 texture = ExtResource("3_vac60")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton3"]
-polygon = PackedVector2Array(-4, 148, -25, 132, -60, 111, -99, 95, -131, 87, -160, 84, -160, -148, -130, -147, -99, -143, -59, -135, -23, -125, 14, -111, 43, -98, 73, -82, 101, -64, 126, -46, 144, -31, 161, -17)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton3" index="1"]
+polygon = PackedVector2Array(-14, 8, -14, -13, -1, -10, 11, -4, 14, -1, 0, 14, -6, 10)
 
-[node name="pingbutton4" type="Area2D" parent="."]
-position = Vector2(852.5, 319.5)
-script = ExtResource("1_e3o18")
+[node name="pingbutton4" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(28, -13.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton4"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton4" index="0"]
 texture = ExtResource("4_l70wj")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton4"]
-polygon = PackedVector2Array(-83, 160, 148, 161, 148, 127, 141, 82, 130, 37, 120, 6, 109, -21, 91, -59, 72, -90, 56, -114, 40, -135, 17, -161, -148, 4, -131, 25, -115, 51, -103, 77, -94, 103, -87, 132)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton4" index="1"]
+polygon = PackedVector2Array(-8, 13, 12, 13, 12, 6, 9, -3, 5, -10, 2, -13, -12, 1, -9, 8)
 
-[node name="pingbutton5" type="Area2D" parent="."]
-position = Vector2(852.5, 681)
-script = ExtResource("1_e3o18")
+[node name="pingbutton5" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(28, 13.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton5"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton5" index="0"]
 texture = ExtResource("5_o1tpv")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton5"]
-polygon = PackedVector2Array(-148, -4, 17, 160, 42, 131, 61, 106, 80, 77, 98, 42, 112, 12, 123, -15, 132, -44, 139, -77, 145, -105, 148, -128, 148, -160, -83, -160, -86, -136, -92, -108, -102, -77, -114, -54, -126, -32)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton5" index="1"]
+polygon = PackedVector2Array(-12, -1, -9, -6, -8, -13, 12, -13, 11, -2, 6, 9, 2, 13)
 
-[node name="pingbutton6" type="Area2D" parent="."]
-position = Vector2(680.5, 852.5)
-script = ExtResource("1_e3o18")
+[node name="pingbutton6" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(14.5, 27.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton6"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton6" index="0"]
 texture = ExtResource("6_7qt51")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton6"]
-polygon = PackedVector2Array(-160, -83, -122, -88, -99, -94, -66, -107, -34, -125, -4, -147, 161, 17, 134, 40, 109, 59, 76, 80, 36, 102, -13, 122, -66, 137, -115, 146, -160, 148)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton6" index="1"]
+polygon = PackedVector2Array(-13, -7, 0, -13, 14, 1, 3, 9, -13, 13)
 
-[node name="pingbutton7" type="Area2D" parent="."]
-position = Vector2(319.5, 852.5)
-script = ExtResource("1_e3o18")
+[node name="pingbutton7" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(-15, 27.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton7"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton7" index="0"]
 texture = ExtResource("7_0ek32")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton7"]
-polygon = PackedVector2Array(-160, 17, 4, -147, 36, -123, 78, -101, 124, -88, 159, -83, 160, 148, 128, 148, 72, 139, 24, 126, -32, 104, -82, 78, -126, 47)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton7" index="1"]
+polygon = PackedVector2Array(-13, 1, 1, -13, 7, -9, 14, -7, 14, 12, 8, 12, -2, 9)
 
-[node name="pingbutton8" type="Area2D" parent="."]
-position = Vector2(147.5, 681)
-script = ExtResource("1_e3o18")
+[node name="pingbutton8" parent="AnimatedSprite2D" instance=ExtResource("3_0sq6e")]
+position = Vector2(-28, 13.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="pingbutton8"]
+[node name="Sprite2D" parent="AnimatedSprite2D/pingbutton8" index="0"]
 texture = ExtResource("8_hglla")
-metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pingbutton8"]
-polygon = PackedVector2Array(-147, -160, 83, -160, 87, -126, 101, -80, 121, -40, 147, -5, -18, 160, -44, 129, -76, 84, -101, 36, -124, -20, -140, -79, -147, -128)
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" parent="AnimatedSprite2D/pingbutton8" index="1"]
+polygon = PackedVector2Array(-13, -13, 8, -13, 12, -0.999996, -2, 13, -10, 2)
 
-[connection signal="mouse_entered" from="pingbutton" to="pingbutton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton" to="pingbutton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton2" to="pingbutton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton2" to="pingbutton2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton3" to="pingbutton3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton3" to="pingbutton3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton4" to="pingbutton4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton4" to="pingbutton4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton5" to="pingbutton5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton5" to="pingbutton5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton6" to="pingbutton6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton6" to="pingbutton6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton7" to="pingbutton7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton7" to="pingbutton7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="pingbutton8" to="pingbutton8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="pingbutton8" to="pingbutton8" method="_on_mouse_exited"]
+[editable path="AnimatedSprite2D/pingbutton1"]
+[editable path="AnimatedSprite2D/pingbutton2"]
+[editable path="AnimatedSprite2D/pingbutton3"]
+[editable path="AnimatedSprite2D/pingbutton4"]
+[editable path="AnimatedSprite2D/pingbutton5"]
+[editable path="AnimatedSprite2D/pingbutton6"]
+[editable path="AnimatedSprite2D/pingbutton7"]
+[editable path="AnimatedSprite2D/pingbutton8"]
