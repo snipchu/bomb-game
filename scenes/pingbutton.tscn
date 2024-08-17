@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://gkr0lok3ugeb"]
-
-[ext_resource type="Script" path="res://scripts/pingbutton.gd" id="1_m36ar"]
+[gd_scene format=3 uid="uid://gkr0lok3ugeb"]
 
 [node name="pingbutton" type="Area2D"]
-script = ExtResource("1_m36ar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 metadata/_edit_lock_ = true

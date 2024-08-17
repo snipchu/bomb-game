@@ -15,10 +15,6 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Pingmenu="*res://scripts/pingmenu.gd"
-
 [input]
 
 jump={
